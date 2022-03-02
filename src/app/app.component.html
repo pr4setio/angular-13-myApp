@@ -1,0 +1,23 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-secondary" *ngIf="existingUser">
+  <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/">Home</a>
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+<div class="h-100 w-100 d-inline-block">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+              <notification></notification>
+              <router-outlet></router-outlet>
+  </div>
+</div>
+          <div class="alert alert-info information">
+              <p>This application storing data at localstorage</p>
+              <ul>
+                  <li>please register user and login after register successfully.</li>
+                  <li>Click Generate dummy date for show 100 data employee.</li>
+                  <li>Click Clear Dummy data for delete all data employee at localstorage.</li>
+              </ul>
+          </div>
+          </div>
