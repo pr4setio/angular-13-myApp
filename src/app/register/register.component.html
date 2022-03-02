@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Register User Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="registerForm" autocomplete="off" (ngSubmit)="registerUser()">
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username" formControlName="username">
+    <mat-error >
+      <div *ngIf="submitted && registerForm.controls['username'].errors">
+        <div *ngIf="registerForm.controls['username'].errors?.['required']">Username is required</div>
+        <div *ngIf="registerForm.controls['username'].errors?.['minLength']">Minimum Length 5 Character</div>
+        <div *ngIf="registerForm.controls['username'].errors?.['maxLength']">Maximum Length 12 Character</div>
+    </div>
+   </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" formControlName="password">
+    <mat-error >
+      <div *ngIf="submitted && registerForm.controls['password'].errors">
+        <div *ngIf="registerForm.controls['password'].errors?.['required']">Password is required</div>
+        <div *ngIf="registerForm.controls['password'].errors?.['minLength']">Minimum Length 5 Character</div>
+        <div *ngIf="registerForm.controls['password'].errors?.['maxLength']">Maximum Length 8 Character</div>
+    </div>
+  </mat-error>
+  </mat-form-field>
+
+<div class="button">
+  <button type="submit" mat-button>Register</button>
+  <button type="button" (click)="cancel()" mat-button>cancel</button>
+</div>
+
+</form>
+</mat-card-content>
+</mat-card>

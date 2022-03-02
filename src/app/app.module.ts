@@ -43,13 +43,15 @@ import { RouterModule } from '@angular/router';
 import { mockingApi, JwtHandler, ErrorHandler } from './helpers';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EmployeeComponent } from './employee/employee.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotificationComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
