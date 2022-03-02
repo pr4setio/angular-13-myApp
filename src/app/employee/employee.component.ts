@@ -64,7 +64,6 @@ export class EmployeeComponent implements OnInit {
     ]
     const currentDate = moment().date();
     this.maxDate = moment([currentDate]);
-    console.log("this.maxDate", this.maxDate);
     this.addEmployeeForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(12)]),
       firstname: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(12)]),

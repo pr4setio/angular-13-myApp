@@ -11,9 +11,8 @@ export class MockingAPIRest implements HttpInterceptor {
     constructor() { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        let users: User[] = JSON.parse(localStorage.getItem('users')|| '{}') || [];
-        let employees: Employee[] = JSON.parse(localStorage.getItem('employees')|| '{}')|| [];
-
+        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+        let employees: any[] = JSON.parse(localStorage.getItem('employees')) || [];
         return of(null).pipe(mergeMap(() => {
 
             // authenticate user
@@ -98,6 +97,7 @@ export class MockingAPIRest implements HttpInterceptor {
 
             // register employee
             if (req.url.endsWith('/employees/register') && req.method === 'POST') {
+
                 let newEmployee = req.body;
 
                 // validation
